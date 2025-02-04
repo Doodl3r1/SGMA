@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacrilegious Gaijin Model Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Sacrilegious Gaijin Model Agency</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+                <li><a href="#need-agent">I Need An Agent</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Sacrilegious Gaijin Model Agency, where we represent the most unique, diverse, and sacrilegiously aesthetic legends from around the world.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with your agent for more information.</p>
+    </section>
+
+    <section id="privacy-policy">
+        <h2>Privacy Policy</h2>
+        <p><strong>Effective Date:</strong> 15/03/2023</p>
+        <p>At Sacrilegious Gaijin Model Agency, we are committed to protecting the privacy and security of our clients' personal information. This Privacy Notice outlines our practices regarding the collection, use, and protection of your data.</p>
+
+        <h3>1. Our Commitment to Your Privacy</h3>
+        <p>We value the trust you place in us and want to assure you that we will never share, sell, rent, or disclose your personal information to any third parties, except as required by law or as necessary to provide the services you have requested.</p>
+
+        <h3>2. Information We Collect</h3>
+        <p>We may collect personal information such as:</p>
+        <ul>
+            <li>Name</li>
+            <li>Contact information (e.g., social media platforms, email address)</li>
+            <li>Payment details (e.g., credit card information)</li>
+            <li>Any other information you voluntarily provide to us</li>
+        </ul>
+
+        <h3>3. How We Use Your Information</h3>
+        <p>Your personal information is used solely for the following purposes:</p>
+        <ul>
+            <li>To provide and improve our services</li>
+            <li>To communicate with you regarding your account or inquiries</li>
+            <li>To process transactions and fulfill orders</li>
+            <li>To comply with legal obligations</li>
+        </ul>
+
+        <h3>4. Protection of Your Information</h3>
+        <p>We implement industry-standard security measures to safeguard your personal information from unauthorized access, disclosure, alteration, or destruction.</p>
+
+        <h3>5. Your Rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access the personal information we hold about you</li>
+            <li>Request corrections to any inaccurate or incomplete data</li>
+            <li>Request the deletion of your personal information, subject to legal requirements</li>
+        </ul>
+
+        <h3>6. Changes to This Privacy Notice</h3>
+        <p>We may update this Privacy Notice from time to time. Any changes will be posted on our website, and the effective date will be updated accordingly.</p>
+    </section>
+
+    <section id="need-agent">
+        <h2>I Need An Agent</h2>
+        <p>Fill out the form below, and we'll get back to you on your preferred social media platform.</p>
+        <form id="agent-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="18">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="female">Female</option>
+                <option value="transgender">Transgender</option>
+                <option value="non-binary">Non-Binary</option>
+            </select>
+
+            <label for="social-media">Preferred Social Media Platform:</label>
+            <select id="social-media" name="social-media" required>
+                <option value="">Select</option>
+                <option value="instagram">Instagram</option>
+                <option value="bluesky">Bluesky</option>
+                <option value="Snapchat">Snapchat</option>
+                <option value="vk">Vk</option>
+                <option value="Discord">Discord</option>
+            </select>
+
+            <label for="platform-username">Platform Username:</label>
+            <input type="text" id="platform-username" name="platform-username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="form-message"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Sacrilegious Gaijin Model Agency. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('agent-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form); // Collect form data
+            const messageDiv = document.getElementById('form-message'); // Message container
+
+            // Send form data to Formspree using Fetch API
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Display success message
+                    messageDiv.innerHTML = '<p style="color: gold;">Thank you! We will contact you soon.</p>';
+                    form.reset(); // Clear the form
+                } else {
+                    // Display error message
+                    messageDiv.innerHTML = '<p style="color: red;">Oops! Something went wrong. Please try again.</p>';
+                }
+            })
+            .catch(error => {
+                // Display error message
+                messageDiv.innerHTML = '<p style="color: red;">Oops! Something went wrong. Please try again.</p>';
+            });
+        });
+    </script>
+</body>
+</html>
