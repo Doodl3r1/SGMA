@@ -1,0 +1,133 @@
+body {
+    background-color: black;
+    color: gold;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: gold;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+}
+
+#privacy-policy {
+    padding: 20px;
+    text-align: left;
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+#privacy-policy h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: gold;
+}
+
+#privacy-policy ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+#privacy-policy p, #privacy-policy li {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Form styling */
+#agent-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid gold;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#agent-form label {
+    font-size: 1.2em;
+    color: gold;
+    font-family: 'Dancing Script', cursive;
+}
+
+#agent-form input,
+#agent-form select,
+#agent-form button {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid gold;
+    border-radius: 5px;
+    background-color: black;
+    color: gold;
+    font-family: 'Dancing Script', cursive;
+}
+
+#agent-form input:focus,
+#agent-form select:focus {
+    outline: none;
+    border-color: #d4af37; /* A darker shade of gold for focus */
+    box-shadow: 0 0 5px gold;
+}
+
+#agent-form button {
+    background-color: gold;
+    color: black;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#agent-form button:hover {
+    background-color: #d4af37; /* A darker shade of gold */
+}
+
+#form-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
